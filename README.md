@@ -5,8 +5,6 @@ A clean, responsive personal portfolio built as the individual project for the *
 **🔗 Live site:** https://pratikshingala03.github.io/cs-portfolio
 **📁 Repository:** https://github.com/pratikshingala03/cs-portfolio
 
-> **Before you publish:** replace `pratik` in the two links above (and in the badges/commands below) with your actual GitHub username.
-
 ---
 
 <p align="center">
