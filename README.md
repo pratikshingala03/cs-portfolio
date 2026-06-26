@@ -10,7 +10,7 @@ A clean, responsive personal portfolio built as the individual project for the *
 ---
 
 <p align="center">
-  <img src="docs/screenshots/portfolio-hero.png" alt="Portfolio home page" width="100%">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/portfolio-hero.png" alt="Portfolio home page" width="100%">
 </p>
 
 ## Overview
