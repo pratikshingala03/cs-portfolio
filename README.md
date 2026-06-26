@@ -10,7 +10,7 @@ A clean, responsive personal portfolio built as the individual project for the *
 ---
 
 <p align="center">
-  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/portfolio-hero.png" alt="Portfolio home page" width="100%">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/docs/screenshots/portfolio-hero.png" alt="Portfolio home page" width="100%">
 </p>
 
 ## Overview
@@ -40,7 +40,7 @@ This portfolio is a single-page website designed as a concise technical showcase
 ### Mobile view
 
 <p align="center">
-  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/portfolio-mobile.png" alt="Responsive mobile layout" width="320">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/docs/screenshots/portfolio-mobile.png" alt="Responsive mobile layout" width="320">
 </p>
 
 ## Tech stack
