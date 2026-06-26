@@ -28,19 +28,19 @@ This portfolio is a single-page website designed as a concise technical showcase
 ### Technical exercises
 
 <p align="center">
-  <img src="docs/screenshots/portfolio-exercises.png" alt="Technical exercises section" width="100%">
+  <img src="https://github.com/pratikshingala03/Restaurant-Management-System" alt="Technical exercises section" width="100%">
 </p>
 
-### Embedded CV
+### LaTeX CV
 
 <p align="center">
-  <img src="docs/screenshots/portfolio-cv.png" alt="Embedded LaTeX CV" width="100%">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/Pratik_Shingala_CV.pdf" alt="Embedded LaTeX CV" width="100%">
 </p>
 
 ### Mobile view
 
 <p align="center">
-  <img src="docs/screenshots/portfolio-mobile.png" alt="Responsive mobile layout" width="320">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/portfolio-mobile.png" alt="Responsive mobile layout" width="320">
 </p>
 
 ## Tech stack
