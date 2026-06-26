@@ -2,8 +2,8 @@
 
 A clean, responsive personal portfolio built as the individual project for the **B201 Computer Science Lab** module at **Gisma University of Applied Sciences, Berlin**. It presents a professional profile, a set of technical exercises, and a curriculum vitae compiled natively in LaTeX and embedded directly in the page.
 
-**🔗 Live site:** https://pratik.github.io/cs-portfolio
-**📁 Repository:** https://github.com/pratik/cs-portfolio
+**🔗 Live site:** https://pratikshingala03.github.io/cs-portfolio
+**📁 Repository:** https://github.com/pratikshingala03/cs-portfolio
 
 > **Before you publish:** replace `pratik` in the two links above (and in the badges/commands below) with your actual GitHub username.
 
