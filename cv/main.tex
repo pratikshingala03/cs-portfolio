@@ -1,0 +1,157 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages for layout and formatting
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[ someborder]{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+% Page geometry setup
+\geometry{
+    left=0.6in,
+    right=0.6in,
+    top=0.6in,
+    bottom=0.6in
+}
+
+% Color definitions
+\definecolor{primaryColor}{RGB}{44, 52, 93} % Sleek dark blue
+\definecolor{textColor}{RGB}{30, 30, 30}   % Soft black for readability
+
+\urlstyle{same}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=primaryColor
+}
+
+% Section heading formatting
+\titleformat{\section}{
+    \large\bfseries\color{primaryColor}
+}{}{0em}{}[\color{primaryColor}\titlerule \vspace{-4pt}]
+
+% Custom list environment for bullet points
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{
+    label=\textbullet,
+    leftmargin=1.5em,
+    rightmargin=0em,
+    topsep=2pt,
+    itemsep=3pt,
+    parsep=0pt
+}
+
+\begin{document}
+\color{textColor}
+
+%=========================================
+% HEADER SECTION
+%=========================================
+\begin{center}
+    {\LARGE \bfseries \color{primaryColor} PRATIK SHINGALA} \\ \vspace{4pt}
+    Data Analyst (in training) | Operations \& Insights \\ \vspace{6pt}
+    \small 
+    Berlin, Germany \ $\cdot$ \ 
+    +49 176 93192 102 \ $\cdot$ \ 
+    \href{mailto:Pratikshingala03@gmail.com}{Pratikshingala03@gmail.com}
+\end{center}
+
+%=========================================
+% PROFILE
+%=========================================
+\section*{PROFILE}
+\vspace{2pt}
+Analytical and detail-oriented data analyst in training with hands-on experience optimising inventory operations through real-time tracking and sales-trend analysis. Currently pursuing a B.Sc. in Computer Science and applying strong communication, teamwork, and multitasking skills to deliver actionable insights in fast-paced environments.
+
+%=========================================
+% PROFESSIONAL EXPERIENCE
+%=========================================
+\section*{PROFESSIONAL EXPERIENCE}
+
+\vspace{4pt}
+\textbf{Junior Operations Manager} \hfill Nov 2023 -- Present \\
+\textit{Burgermeister Berlin} \hfill Berlin, Germany
+\begin{cvitems}
+    \item Oversee employee records, payroll budgeting, contract administration, and meeting coordination.
+    \item Designed and implemented a new staff-scheduling system that reduced shift conflicts and improved workforce utilisation.
+    \item Manage vendor relationships and track departmental budgets to control costs and support growth initiatives.
+\end{cvitems}
+
+\vspace{6pt}
+\textbf{Junior Data Analyst} \hfill Oct 2022 -- Oct 2023 \\
+\textit{Amazon} \hfill Munich, Germany
+\begin{cvitems}
+    \item Analysed sales trends and customer feedback to identify opportunities and recommend strategies to increase revenue.
+    \item Monitored real-time inventory across multiple warehouses to enable proactive supply-chain decisions and reduce stockouts.
+    \item Prepared actionable reports and visualisations to inform management reviews and operational adjustments.
+    \item Collaborated with cross-functional teams on performance management and employee relations.
+\end{cvitems}
+
+\vspace{6pt}
+\textbf{Working Student -- AI-Powered Developer Tools} \hfill Oct 2020 -- Oct 2022 \\
+\textit{Amazon} \hfill Surat, India
+\begin{cvitems}
+    \item Developed and maintained AI-powered developer tools that integrated large language models into the software development life cycle to support code quality and developer decision-making.
+    \item Built features to detect developer knowledge gaps, suggest code improvements, and automate routine checks to increase developer productivity.
+    \item Collaborated with engineers and product managers to design experiments, iterate on models, and measure impact.
+\end{cvitems}
+
+%=========================================
+% EDUCATION
+%=========================================
+\section*{EDUCATION}
+
+\vspace{4pt}
+\textbf{B.Sc. Computer Science} \hfill Oct 2023 -- Present \\
+\textit{GISMA University of Applied Sciences} \hfill Germany
+
+%=========================================
+% SKILLS
+%=========================================
+\section*{SKILLS}
+
+\vspace{4pt}
+\textbf{Data \& Programming:} Python, MySQL, Cloud Computing \\
+\textbf{Analytics:} Sales-trend analysis, Real-time inventory tracking, Reporting \& visualisation, Social-media analysis \\
+\textbf{Tools \& Platforms:} Google Workspace, Jira, CMS management, SEO optimisation \\
+\textbf{Professional:} Planning \& organising, Communication, Problem solving, Teamwork
+
+%=========================================
+% COURSES & CERTIFICATIONS
+%=========================================
+\section*{COURSES \& CERTIFICATIONS}
+
+\vspace{4pt}
+\textbf{Google Cloud Fundamentals: Core Infrastructure} \hfill Jan -- Jun 2025 \\
+\textit{Coursera}
+
+\vspace{4pt}
+\textbf{Developing a Google SRE Culture} \hfill Jul -- Dec 2025 \\
+\textit{Coursera}
+
+%=========================================
+% EXTRACURRICULAR
+%=========================================
+\section*{EXTRACURRICULAR}
+
+\vspace{4pt}
+\textbf{Advent of Cyber 2025} \hfill Nov 2025 \\
+\textit{TryHackMe} \hfill Berlin, Germany
+\begin{cvitems}
+    \item Completed hands-on modules and CTF-style challenges across web exploitation, forensics, network security, and cryptography.
+    \item Applied Linux and scripting tools to investigate vulnerabilities and automate repetitive analysis tasks.
+    \item Documented step-by-step write-ups and remediation recommendations, and collaborated on team-based attack/defense challenges.
+\end{cvitems}
+
+%=========================================
+% LANGUAGES
+%=========================================
+\section*{LANGUAGES}
+\vspace{4pt}
+German, English, Gujarati, Hindi
+
+\end{document}
