@@ -1,11 +1,7 @@
 # Pratik Shingala — Computer Science Portfolio
 
-A clean, responsive personal portfolio built as the individual project for the **B201 Computer Science Lab** module at **Gisma University of Applied Sciences, Berlin**. It presents a professional profile, a set of technical exercises, and a curriculum vitae compiled natively in LaTeX and embedded directly in the page.
-
 **🔗 Live site:** https://pratikshingala03.github.io/cs-portfolio
 **📁 Repository:** https://github.com/pratikshingala03/cs-portfolio
-
----
 
 <p align="center">
   <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/docs/screenshots/portfolio-hero.png" alt="Portfolio home page" width="100%">
