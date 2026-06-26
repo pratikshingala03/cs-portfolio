@@ -34,7 +34,7 @@ This portfolio is a single-page website designed as a concise technical showcase
 ### LaTeX CV
 
 <p align="center">
-  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/Pratik_Shingala_CV.pdf" alt="Embedded LaTeX CV" width="100%">
+  <img src="https://github.com/pratikshingala03/cs-portfolio/blob/main/cv/main.tex" alt="Embedded LaTeX CV" width="100%">
 </p>
 
 ### Mobile view
@@ -82,7 +82,7 @@ The site is a single static file with no build step. Either open it directly:
 
 ```bash
 # clone the repository
-git clone https://github.com/pratik/cs-portfolio.git
+git clone https://github.com/pratikshingala03/cs-portfolio.git
 cd cs-portfolio
 
 # open index.html in your browser, or serve it locally:
@@ -115,7 +115,7 @@ The site is hosted on **GitHub Pages** directly from the `main` branch:
 1. Push the repository to GitHub.
 2. Go to **Settings → Pages**.
 3. Under **Source**, choose the `main` branch and the `/ (root)` folder, then **Save**.
-4. The site goes live at `https://<your-username>.github.io/cs-portfolio/` within a minute or two.
+4. The site goes live at `https://pratikshingala03.github.io/cs-portfolio/` within a minute or two.
 
 Because deployment is driven from version control, the live site always reflects the latest commit on `main`.
 
