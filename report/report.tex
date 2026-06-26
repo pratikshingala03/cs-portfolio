@@ -1,0 +1,157 @@
+\documentclass[11pt,a4paper]{article}
+
+% ----------------------------- packages -----------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.96]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[round,authoryear]{natbib}
+\usepackage[colorlinks=true,linkcolor=accent,urlcolor=accent,citecolor=accent]{hyperref}
+
+% ----------------------------- colours ------------------------------
+\definecolor{accent}{HTML}{0B5FA5}
+\definecolor{ink}{HTML}{1D1D1F}
+\definecolor{soft}{HTML}{5C616E}
+\definecolor{rule}{HTML}{D7D7DC}
+\definecolor{panel}{HTML}{F4F6F9}
+\color{ink}
+
+% ----------------------------- section style ------------------------
+\titleformat{\section}
+  {\color{accent}\bfseries\large}
+  {\thesection}{0.6em}{}[\vspace{2pt}{\color{rule}\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}{\color{ink}\bfseries\normalsize}{\thesubsection}{0.6em}{}
+\titlespacing{\subsection}{0pt}{8pt}{3pt}
+
+% ----------------------------- lists --------------------------------
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=3pt,parsep=0pt,label={\color{accent}\small$\bullet$}}
+
+% ----------------------------- listings -----------------------------
+\lstdefinestyle{tree}{
+  basicstyle=\ttfamily\small\color{ink},
+  backgroundcolor=\color{panel},
+  frame=single,
+  rulecolor=\color{rule},
+  framesep=8pt,
+  xleftmargin=4pt,
+  breaklines=true,
+  showstringspaces=false
+}
+
+% ----------------------------- header/footer ------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{soft}\thepage}
+
+% ----------------------------- title --------------------------------
+\title{\vspace{-1.2cm}\bfseries B201 Computer Science Lab\\[4pt]
+\large Design and Implementation of a Professional Computer Science Portfolio}
+\author{Pratik\\ \small Gisma University of Applied Sciences, Berlin}
+\date{\small June 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\vspace{-0.6cm}
+
+\begin{abstract}
+\noindent This report documents the design, implementation and critical evaluation of a personal computer science portfolio developed as the individual project for the B201 Computer Science Lab module. The artefact is a live, responsive, single-page website that presents a professional profile, a curated set of technical exercises, and a professionally typeset curriculum vitae compiled natively in \LaTeX. The project was constructed with HTML5, CSS3 and vanilla JavaScript, version-controlled with Git, and deployed through GitHub Pages. The report explains the repository architecture, justifies the design and engineering decisions taken, surveys the supporting tools and technologies, and reflects critically on the strengths, limitations and future direction of the work. The objective throughout was to produce a concise, verifiable demonstration of technical competence suitable for evaluation by a prospective employer and a university assessor.
+\end{abstract}
+
+% ===================================================================
+\section{Introduction and Repository Links}
+% ===================================================================
+The objective of this project was to design and deliver a professional portfolio that functions as a concise technical showcase in support of a working-student application within the technology sector. Rather than describing competence in the abstract, the portfolio demonstrates it directly: it is a working software artefact whose source code, structure and presentation are themselves part of the evidence under review. The intended audience is twofold. An engineering hiring manager should be able to assess the candidate's practical web-development, version-control and documentation skills within a few minutes, while a university assessor should be able to map the deliverable against the module's marking criteria of correctness, completeness, conciseness and critical evaluation.
+
+The portfolio was scoped deliberately. It presents an ``About Me'' profile that frames the candidate's background in data analysis and operations; a technical-exercises section that surfaces representative work in Python scripting, SQL database management and network-scanning automation; and an embedded curriculum vitae that is compiled from \LaTeX{} source rather than exported from a word processor, reinforcing the technical positioning of the application. The two canonical references for the project are provided below and are the authoritative entry points for assessment.
+
+\vspace{4pt}
+\noindent\fcolorbox{rule}{panel}{%
+\begin{minipage}{0.96\linewidth}
+\vspace{4pt}
+\textbf{Live portfolio:} \quad \url{https://pratik.github.io/cs-portfolio}\\[3pt]
+\textbf{Source repository:} \quad \url{https://github.com/pratik/cs-portfolio}
+\vspace{4pt}
+\end{minipage}}
+\vspace{4pt}
+
+The live site reflects the exact state of the \texttt{main} branch of the repository, because deployment is driven directly from version control through GitHub Pages \citep{github2024}. This tight coupling between the published artefact and the source history means that the website, its commit log and its directory structure can all be inspected as a single, internally consistent body of evidence.
+
+% ===================================================================
+\section{Portfolio and Repository Architecture}
+% ===================================================================
+The repository is organised around a clear separation of concerns, so that each category of artefact---web assets, the \LaTeX{} curriculum vitae, the technical exercises and the assessment report---occupies its own directory and can evolve independently. This structure is intended to be legible to a reviewer opening the repository for the first time, and maintainable for the developer over time. The logical layout is shown in Listing~\ref{lst:tree}.
+
+\begin{lstlisting}[style=tree,caption={Repository directory structure.},label={lst:tree}]
+cs-portfolio/
+|-- index.html              # single-page entry point
+|-- assets/
+|   |-- css/
+|   |   `-- styles.css      # modular, responsive stylesheet
+|   |-- js/
+|   |   `-- main.js         # progressive enhancement only
+|   `-- img/                # optimised image assets
+|-- exercises/
+|   |-- python/             # data-processing scripts
+|   |-- sql/                # schema and example queries
+|   `-- network/            # network-scanning scripts
+|-- cv/
+|   |-- cv.tex              # LaTeX source of the CV
+|   `-- Pratik_CV.pdf       # compiled, embedded output
+|-- report/
+|   |-- report.tex          # this document
+|   `-- references.bib      # Harvard-style bibliography
+|-- README.md               # project overview and setup
+`-- LICENSE
+\end{lstlisting}
+
+Several decisions underpin this arrangement. First, presentation assets are isolated under \texttt{assets/}, with stylesheets, scripts and images held in dedicated sub-directories; this keeps the project root uncluttered and makes the relationship between markup, styling and behaviour explicit. Second, the technical exercises are grouped by discipline rather than scattered, so that a reviewer interested specifically in database work or in scripting can navigate to it immediately. Third, the curriculum vitae is treated as a first-class engineering deliverable: its \LaTeX{} source is committed alongside the compiled PDF, allowing the document to be re-built reproducibly and demonstrating familiarity with a professional typesetting toolchain \citep{lamport1994}. Finally, the report and its bibliography are kept separate from the published website so that academic materials do not leak into the production deployment.
+
+Maintainability is reinforced through disciplined use of Git. Work was committed in small, semantically meaningful units with descriptive messages, producing a history that is itself readable documentation of the project's evolution \citep{chacon2014}. A top-level \texttt{README.md} records the project's purpose, structure and local build instructions, lowering the barrier for any third party who wishes to clone, inspect or extend the work.
+
+% ===================================================================
+\section{Design Decisions and Technical Justifications}
+% ===================================================================
+The guiding design principle was restraint. The interface adopts a clean, distraction-free, content-first layout in which typography, spacing and a single accent colour carry the visual identity, rather than ornamentation. This decision is a considered response to the intended audience. An engineering hiring manager reviews many applications under time pressure and values signal over noise; a minimalist layout communicates the candidate's judgement and respects the reader's attention, allowing the substance of the work to dominate the presentation \citep{krug2014}. Usability research has long held that interfaces should minimise cognitive load and make the next action obvious, and the portfolio applies this directly through a single-page structure with a fixed navigation bar and smoothly anchored sections \citep{nielsen1994}.
+
+The visual system is intentionally narrow. A near-white background and a dark neutral text colour establish high contrast and comfortable reading, while one saturated accent is reserved for interactive elements such as links and primary buttons. Limiting the palette in this way creates a coherent identity and ensures that colour is used to convey meaning---specifically, interactivity---rather than for decoration. A clear typographic hierarchy distinguishes the candidate's name, section headings, body copy and supporting metadata, giving the page structure that can be parsed at a glance.
+
+Responsiveness was a first-order requirement rather than an afterthought. The layout is fluid and adapts across viewport sizes, collapsing multi-column arrangements into single-column stacks on narrow screens so that the content remains legible on a mobile device \citep{marcotte2011}. This matters because reviewers frequently open candidate links on a phone, and a portfolio that degrades on small screens would undermine the very competence it seeks to demonstrate. Accessibility considerations were incorporated alongside responsiveness: semantic HTML5 elements provide a meaningful document outline, interactive controls expose visible keyboard-focus states, colour contrast targets legibility, and motion is suppressed for users who have expressed a reduced-motion preference. These choices align the portfolio with established accessibility guidance \citep{w3c2018} and reflect contemporary professional practice \citep{mdn2024}.
+
+Structurally, the embedded curriculum vitae deserves particular note. It is rendered from \LaTeX{} and surfaced within the page itself, so that a reviewer can read it without leaving the site and download a print-ready copy on demand. Compiling the CV natively, rather than attaching a word-processor export, is a deliberate signal: it demonstrates command of a toolchain that is standard in technical and academic environments and yields a typographically superior, reproducible document.
+
+% ===================================================================
+\section{Tools and Technologies}
+% ===================================================================
+The technology stack was chosen for being standard, efficient and proportionate to the problem. The front end is built with semantic HTML5 for structure, modular CSS3 for presentation and a small amount of vanilla JavaScript for behaviour. Deliberately avoiding a heavyweight framework keeps the artefact lightweight, fast to load and free of build-tool complexity that would add little value to a portfolio of this size; JavaScript is used only for progressive enhancement, so the core content remains available even where scripting is unavailable \citep{mdn2024}. Modular CSS, organised by component and layered from base styles to responsive overrides, keeps the stylesheet maintainable and avoids the specificity conflicts that accumulate in ad-hoc designs \citep{duckett2011}.
+
+Version control is provided by Git, which underpins both the development workflow and the credibility of the submission. A clean, well-described commit history demonstrates an understanding of collaborative engineering norms and provides a transparent record of how the project was built \citep{chacon2014}. Hosting is handled by GitHub Pages, which serves the static site directly from the repository at no cost and re-publishes automatically whenever changes are pushed to the default branch \citep{github2024}. For a static portfolio, this offers a pragmatic, low-friction form of continuous deployment without the operational overhead of managing a server.
+
+The documentation toolchain is built on \LaTeX, used both for this report and for the curriculum vitae. \LaTeX{} was selected for its precise typographic control, its reproducibility, and its status as the lingua franca of technical and scientific writing, which makes it an appropriate and credible choice for a computer science portfolio \citep{lamport1994}. Collectively, these technologies represent a mainstream, well-supported stack: each is widely documented, broadly adopted in industry, and entirely sufficient for hosting a professional portfolio without unnecessary dependencies.
+
+% ===================================================================
+\section{Critical Reflection and Future Improvements}
+% ===================================================================
+Assessed honestly, the portfolio has clear strengths. Its responsive design behaves consistently across devices, and its accessibility provisions extend its reach to a wider audience. The repository history is clean and granular, functioning as a transparent narrative of the development process, while the single-page structure and fixed navigation make the site genuinely easy to traverse. Because the artefact avoids heavyweight dependencies, it loads quickly and is straightforward to maintain. The decision to compile the curriculum vitae from \LaTeX{} source further distinguishes the submission and reinforces its technical credibility.
+
+The project also has limitations that should be acknowledged candidly. Most significantly, it lacks an automated testing and continuous-integration pipeline; quality is currently assured through manual review rather than programmatic checks, which does not scale and leaves room for regressions to go unnoticed. The interface is presented in a single light theme and does not yet offer a dark/light mode toggle, a feature that users increasingly expect. The content is also static: there is no mechanism for publishing new material such as articles or case studies without editing the source directly, which constrains how the portfolio can grow. Finally, the technical exercises, while representative, are demonstrative in scope rather than fully productionised, and deployment, though automatic, is not gated by any validation step.
+
+Several actionable improvements follow directly from this assessment. The most valuable next step would be to introduce a continuous-integration and deployment workflow using GitHub Actions, applying automated linting, broken-link detection and performance auditing on every commit before publishing, thereby formalising quality assurance and embodying continuous-delivery practice \citep{humble2010,fowler2006}. A dark/light theme toggle, implemented with CSS custom properties and a small preference-aware script, would modernise the experience at low cost. Introducing a dynamic blog or writing section---ideally generated from Markdown through a static-site generator---would allow the portfolio to evolve into a living body of work rather than a fixed snapshot. Finally, the technical-exercises section could be expanded with more substantial, well-tested projects and accompanying documentation, deepening the evidence of competence that the portfolio is designed to provide. Pursued together, these enhancements would transform a strong static showcase into a continuously integrated, self-sustaining professional platform.
+
+% ===================================================================
+\section{References}
+% ===================================================================
+\renewcommand{\refname}{\vspace{-1.2em}}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
